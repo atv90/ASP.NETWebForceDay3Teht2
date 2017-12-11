@@ -19,5 +19,17 @@ namespace ASP.NETWebFormsDay3Teht2
             Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts",
                 "<script>alert('Kirjoita nimesi alla olevaan kenttään ja klikkaa OK.');</script>");
         }
+
+        protected void BtnOK_Click(object sender, EventArgs e)
+        {
+            msgBox("Hei, " + TxtBox.Text + "!");
+        }
+
+        //luodaan msgBox metodi, jota käytetään Button1_click 
+        public void msgBox(String msg)
+        {
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "Message Box",
+                "<script language='javascript'>alert('" + msg + "')</script>");
+        }
     }
 }
